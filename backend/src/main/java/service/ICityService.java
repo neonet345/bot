@@ -18,6 +18,13 @@ public interface ICityService {
   ResponseMessage getDescriptionCity(final String city);
 
   /**
+   * This method is used to get all name cities
+   *
+   * @return city name list
+   */
+  List<String> getAllNameCities();
+
+  /**
    * This method is used to get all cities
    *
    * @return city list

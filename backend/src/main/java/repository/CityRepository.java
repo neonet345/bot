@@ -8,9 +8,12 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import repository.entity.City;
 
+import java.util.List;
+
 /** Repository for working with the city table */
 @Repository
 public interface CityRepository extends JpaRepository<City, Long> {
+  String GET_ALL_NAME_CITIES = "SELECT c.city FROM city c";
 
   /**
    * This method is used to get a description of the city
@@ -20,6 +23,14 @@ public interface CityRepository extends JpaRepository<City, Long> {
    */
   @Query(value = "select * from city c where lower(c.city) = lower(:city)", nativeQuery = true)
   City findCity(@Param("city") String city);
+
+  /**
+   * This method is used to get a name all cities
+   *
+   * @return list name cities
+   */
+  @Query(value = GET_ALL_NAME_CITIES, nativeQuery = true)
+  List<String> getAllNameCities();
 
   /**
    * This method is used to remove information about a city

@@ -38,6 +38,7 @@
     </build>
     <modules>
         <module>backend</module>
+        <module>telegram_bot</module>
     </modules>
     <dependencies>
         <dependency>

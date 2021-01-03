@@ -47,6 +47,17 @@ public class CityController {
   }
 
   /**
+   * This method is used to get all cities
+   *
+   * @return city list
+   */
+  @GetMapping(value = "/getAllNameCities", produces = "application/json")
+  public @ResponseBody List<String> getAllNameCity() {
+    log.info("request for get all city");
+    return cityService.getAllNameCities();
+  }
+
+  /**
    * This method is used to store information about a city
    *
    * @param city information about the city

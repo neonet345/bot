@@ -1,8 +1,7 @@
-package conf;
+package config;
 
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.annotation.PropertySources;
 
@@ -11,6 +10,7 @@ import org.springframework.context.annotation.PropertySources;
         @PropertySource(value = "file:./app.properties", ignoreResourceNotFound = true)
 })
 @EnableAutoConfiguration
-@Import(DataConfig.class)
-@ComponentScan({"controller", "service", "controller.exception"})
-public class WebConfig {}
+@ComponentScan({"service", "service.impl"})
+public class AppConfig {
+
+}
