@@ -38,6 +38,11 @@ public class CityServiceImpl implements ICityService {
   }
 
   @Override
+  public List<String> getAllNameCities() {
+    return cityRepository.getAllNameCities();
+  }
+
+  @Override
   public List<City> getAllCities() {
     log.info("Getting all cities from the base");
     return new ArrayList<>(cityRepository.findAll());
